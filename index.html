@@ -10,73 +10,71 @@
 
 <style>
 
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #ffffff;
+body{
+    margin:0;
+    font-family:Arial;
+    background:#ffffff;
 }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
 }
 
-.box {
-    width: 300px;
+.box{
+    width:300px;
 }
 
-h2 {
-    color: #222;
+h2{
+    color:#222;
 }
 
-p {
-    color: #666;
+p{
+    color:#666;
 }
 
-.btn {
-    display: block;
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    background: #0088cc;
+.btn{
+    display:block;
+    margin-top:12px;
+    padding:12px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    background:#0088cc;
 }
 
-.btn:hover {
-    background: #0074ad;
+.btn:hover{
+    background:#0074ad;
 }
 
-.image img {
-    width: 350px;
-    border-radius: 12px;
+.image img{
+    width:350px;
+    border-radius:12px;
 }
 
 </style>
 
 <script>
 
-let shopee = "https://shopee.vn/link-cua-ban";
+let shopee = "https://shopee.vn";   // thay bằng link shopee thật
 
-function redirectFirst(e){
+document.addEventListener("click", function(e){
 
     let first = localStorage.getItem("visited");
 
     if(!first){
         e.preventDefault();
-        localStorage.setItem("visited","true");
+        localStorage.setItem("visited","1");
         window.location.href = shopee;
     }
 
-}
-
-document.addEventListener("click", redirectFirst);
+});
 
 </script>
 
@@ -92,28 +90,21 @@ document.addEventListener("click", redirectFirst);
 
 <p>Chọn nhóm bên dưới</p>
 
-<a class="btn" href="https://t.me/link1">
-Telegram nhóm 1
-</a>
+<a class="btn" href="https://t.me/link1">Telegram nhóm 1</a>
 
-<a class="btn" href="https://t.me/link2">
-Telegram nhóm 2
-</a>
+<a class="btn" href="https://t.me/link2">Telegram nhóm 2</a>
 
-<a class="btn" href="https://t.me/link3">
-Telegram nhóm 3
-</a>
+<a class="btn" href="https://t.me/link3">Telegram nhóm 3</a>
 
 </div>
 
 <div class="image">
 
-<img src="anh.jpg" alt="Deal">
+<img src="anh.jpg">
 
 </div>
 
 </div>
 
 </body>
-
 </html>
