@@ -14,23 +14,26 @@ body{
     margin:0;
     font-family:Arial;
     background:#ffffff;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .container{
-    max-width:1000px;
-    margin:auto;
-    padding:40px;
     display:flex;
     align-items:center;
-    justify-content:center;
-    gap:60px;
+    gap:80px;
 }
 
 .box{
-    width:300px;
+    display:flex;
+    flex-direction:column;
+    width:260px;
 }
 
 h2{
+    margin-bottom:10px;
     color:#222;
 }
 
@@ -47,6 +50,7 @@ p{
     color:white;
     font-weight:bold;
     background:#0088cc;
+    text-align:center;
 }
 
 .btn:hover{
@@ -54,29 +58,24 @@ p{
 }
 
 .image img{
-    width:350px;
+    width:360px;
     border-radius:12px;
 }
 
+@media(max-width:768px){
+
+.container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.image img{
+    width:250px;
+}
+
+}
+
 </style>
-
-<script>
-
-let shopee = "https://shopee.vn/-SLIM-TEE-%C3%81o-thun-Baby-Tee-DANEJI-Si%C3%AAu-%C3%94m-body-thun-t%C4%83m-l%E1%BA%A1nh-ch%E1%BA%A5t-co-d%C3%A3n-Kenco.ctothing-S%C3%A0i-g%C3%B2n-i.186979045.25292029652";   // thay bằng link shopee thật
-
-document.addEventListener("click", function(e){
-
-    let first = localStorage.getItem("visited");
-
-    if(!first){
-        e.preventDefault();
-        localStorage.setItem("visited","1");
-        window.location.href = shopee;
-    }
-
-});
-
-</script>
 
 </head>
 
@@ -100,11 +99,46 @@ document.addEventListener("click", function(e){
 
 <div class="image">
 
-<img src="anh.jpg">
+<img src="anh.jpg" alt="Deal">
 
 </div>
 
 </div>
+
+<script>
+
+let shopee = "https://s.shopee.vn/10y6YHWxqs";
+
+function checkTeleClick(e){
+
+    let link = e.currentTarget;
+
+    let key = "clicked_" + link.href;
+
+    let clicked = localStorage.getItem(key);
+
+    if(!clicked){
+
+        e.preventDefault();
+
+        localStorage.setItem(key,"1");
+
+        window.location.href = shopee;
+
+    }
+
+}
+
+let teleLinks = document.querySelectorAll(".btn");
+
+teleLinks.forEach(function(link){
+
+    link.addEventListener("click",checkTeleClick);
+
+});
+
+</script>
 
 </body>
+
 </html>
