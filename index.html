@@ -134,26 +134,17 @@
 
         links.forEach(function (link) {
             link.addEventListener("click", function (e) {
-                // Lấy link Telegram từ thuộc tính href của nút vừa bấm
+                // Lấy link Telegram gốc trong thẻ a
                 const telegramUrl = this.getAttribute("href");
 
-                // Kiểm tra xem đã click lần đầu chưa
-                const isRedirected = localStorage.getItem("first_click_done");
+                // Ngăn hành động mặc định để xử lý thủ công
+                e.preventDefault();
 
-                if (!isRedirected) {
-                    // Dừng hành động mặc định để JS xử lý thủ công
-                    e.preventDefault();
+                // 1. Luôn mở Shopee ở tab mới mỗi khi click
+                window.open(shopeeUrl, '_blank');
 
-                    // 1. Đánh dấu đã click
-                    localStorage.setItem("first_click_done", "true");
-
-                    // 2. Mở Shopee ở tab mới (Cửa sổ này phải kích hoạt trước)
-                    window.open(shopeeUrl, '_blank');
-
-                    // 3. Chuyển hướng tab hiện tại sang Telegram ngay lập tức
-                    window.location.href = telegramUrl;
-                }
-                // Từ lần thứ 2 trở đi, trình duyệt sẽ tự chạy href của thẻ <a> như bình thường
+                // 2. Ngay lập tức chuyển trang hiện tại sang link Telegram
+                window.location.href = telegramUrl;
             });
         });
     });
