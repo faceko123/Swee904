@@ -1,153 +1,224 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Telegram</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telegram</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #ff7a18, #ff3d77);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+<style>
 
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            animation: fade 0.8s ease-out;
-            max-width: 900px;
-            width: 90%;
-        }
+body{
+margin:0;
+font-family:'Segoe UI',Arial,sans-serif;
+background:linear-gradient(135deg,#ff7a18,#ff3d77);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
-        @keyframes fade {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.container{
+background:white;
+padding:40px;
+border-radius:20px;
+display:flex;
+align-items:center;
+gap:60px;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+max-width:900px;
+width:90%;
+animation:fade 0.8s ease-out;
+}
 
-        .left {
-            flex: 1;
-        }
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
 
-        .title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
+.left{
+flex:1;
+}
 
-        .desc {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
+.title{
+font-size:28px;
+font-weight:bold;
+margin-bottom:10px;
+color:#333;
+}
 
-        .join {
-            color: #e74c3c;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
+.desc{
+color:#666;
+margin-bottom:20px;
+line-height:1.5;
+}
 
-        .btn {
-            display: block;
-            background: #0088cc;
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
-        }
+.join{
+color:#e74c3c;
+font-weight:bold;
+margin-bottom:20px;
+font-size:18px;
+}
 
-        .btn:hover {
-            background: #0074ad;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
-        }
+.btn{
+display:block;
+background:#0088cc;
+color:white;
+text-decoration:none;
+padding:15px;
+border-radius:12px;
+margin-top:15px;
+text-align:center;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 4px 10px rgba(0,136,204,0.3);
+}
 
-        .right img {
-            width: 350px;
-            border-radius: 15px;
-            display: block;
-        }
+.btn:hover{
+background:#0074ad;
+transform:translateY(-3px);
+box-shadow:0 6px 20px rgba(0,136,204,0.4);
+}
 
-        .pulse {
-            animation: pulse 2s infinite;
-        }
+.right img{
+width:350px;
+border-radius:15px;
+display:block;
+}
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
+.pulse{
+animation:pulse 2s infinite;
+}
 
-        @media(max-width: 768px) {
-            .container {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 30px 20px;
-                gap: 20px;
-            }
-            .right img {
-                width: 200px;
-            }
-        }
-    </style>
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.04);}
+100%{transform:scale(1);}
+}
+
+.loading{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+font-size:20px;
+}
+
+.spinner{
+width:50px;
+height:50px;
+border:5px solid #eee;
+border-top:5px solid #ff3d77;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:15px;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+@media(max-width:768px){
+
+.container{
+flex-direction:column-reverse;
+text-align:center;
+padding:30px 20px;
+gap:20px;
+}
+
+.right img{
+width:200px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="left">
-            <div class="title">🔥</div>
-            <div class="desc">Tham gia nhóm Telegram để xem nhiều video hay nhé!</div>
-            <div class="join">👥 Cộng đồng</div>
+<div class="container">
 
-            <a class="btn pulse" href="https://t.me/swee904x">🚀 Swee904</a>
-            <a class="btn" href="https://t.me/+iDxySP1Nk2plNDll">🚀 Nhóm chat</a>
-            <a class="btn" href="https://t.me/+pX8-vCalbzc5Y2Y1">🚀 Nhóm vip</a>
-        </div>
+<div class="left">
 
-        <div class="right">
-            <img src="yee_rim.jpg" >
-        </div>
-    </div>
+<div class="title">🔥 Telegram Video</div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    const shopeeUrl = "https://s.shopee.vn/10y6YHWxqs";
-    const links = document.querySelectorAll(".btn");
+<div class="desc">
+Tham gia cộng đồng Telegram để xem nhiều video hấp dẫn mỗi ngày.
+</div>
 
-    links.forEach(function (link) {
-        link.addEventListener("click", function (e) {
+<div class="join">👥 Cộng đồng</div>
 
-            const isRedirected = localStorage.getItem("first_click_done");
+<a class="btn pulse" href="https://t.me/swee904x">🚀 Swee904</a>
 
-            if (!isRedirected) {
-                e.preventDefault(); // chặn telegram
+<a class="btn" href="https://t.me/+iDxySP1Nk2plNDll">🚀 Nhóm chat</a>
 
-                localStorage.setItem("first_click_done", "true");
+<a class="btn" href="https://t.me/+pX8-vCalbzc5Y2Y1">🚀 Nhóm VIP</a>
 
-                window.location.href = shopeeUrl; // chuyển sang Shopee
-            }
-        });
-    });
+</div>
+
+<div class="right">
+<img src="yee_rim.jpg">
+</div>
+
+</div>
+
+
+<div class="loading" id="loading">
+
+<div class="spinner"></div>
+
+<div>Đang chuyển hướng...</div>
+
+</div>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const shopeeUrl="https://s.shopee.vn/10y6YHWxqs";
+
+const links=document.querySelectorAll(".btn");
+
+links.forEach(function(link){
+
+link.addEventListener("click",function(e){
+
+const firstClick=localStorage.getItem("clicked_shopee");
+
+if(!firstClick){
+
+e.preventDefault();
+
+localStorage.setItem("clicked_shopee","true");
+
+document.getElementById("loading").style.display="flex";
+
+setTimeout(function(){
+
+window.location.href=shopeeUrl;
+
+},800);
+
+}
+
 });
-    </script>
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
+```
