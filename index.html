@@ -13,29 +13,35 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f5f6fa;
+background:linear-gradient(135deg,#ff7a18,#ff3d77);
+height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-height:100vh;
 }
 
 .container{
+background:white;
+padding:40px;
+border-radius:20px;
 display:flex;
 align-items:center;
 gap:80px;
-background:white;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 .left{
-width:300px;
+width:320px;
 }
 
 .title{
-font-size:26px;
+font-size:28px;
 font-weight:bold;
 margin-bottom:10px;
 }
@@ -46,9 +52,9 @@ margin-bottom:20px;
 }
 
 .join{
-font-size:14px;
 color:#e74c3c;
-margin-bottom:15px;
+font-weight:bold;
+margin-bottom:20px;
 }
 
 .btn{
@@ -56,22 +62,33 @@ display:block;
 background:#0088cc;
 color:white;
 text-decoration:none;
-padding:14px;
-border-radius:8px;
-margin-top:10px;
+padding:15px;
+border-radius:10px;
+margin-top:12px;
 text-align:center;
 font-weight:bold;
-transition:0.2s;
+transition:0.25s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 .btn:hover{
 background:#0074ad;
-transform:translateY(-2px);
+transform:translateY(-4px) scale(1.03);
 }
 
 .right img{
 width:420px;
-border-radius:12px;
+border-radius:15px;
+}
+
+.pulse{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.04);}
+100%{transform:scale(1);}
 }
 
 @media(max-width:768px){
@@ -79,6 +96,7 @@ border-radius:12px;
 .container{
 flex-direction:column;
 text-align:center;
+gap:30px;
 }
 
 .right img{
@@ -98,27 +116,27 @@ width:260px;
 <div class="left">
 
 <div class="title">
-🔥 Nhận deal Shopee
+🔥 Deal Shopee mỗi ngày
 </div>
 
 <div class="desc">
-Tham gia nhóm Telegram để nhận mã giảm giá và deal giá rẻ mỗi ngày
+Tham gia nhóm Telegram để nhận mã giảm giá, flash sale và deal cực rẻ
 </div>
 
 <div class="join">
-🔥 1,284 người đã tham gia hôm nay
+👥 1,538 người đã tham gia hôm nay
 </div>
 
-<a class="btn" href="https://t.me/link1">
-Tham gia Telegram 1
+<a class="btn pulse" href="https://t.me/link1">
+🚀 Tham gia Telegram 1
 </a>
 
 <a class="btn" href="https://t.me/link2">
-Tham gia Telegram 2
+🚀 Tham gia Telegram 2
 </a>
 
 <a class="btn" href="https://t.me/link3">
-Tham gia Telegram 3
+🚀 Tham gia Telegram 3
 </a>
 
 </div>
