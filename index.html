@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Deal Hot Shopee</title>
+<title>Deal Telegram</title>
 
 <style>
 
@@ -25,98 +23,43 @@ text-align:center;
 background:rgba(0,0,0,0.35);
 padding:40px;
 border-radius:15px;
-width:340px;
-}
-
-.loader{
-border:6px solid rgba(255,255,255,0.3);
-border-top:6px solid white;
-border-radius:50%;
-width:45px;
-height:45px;
-margin:20px auto;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-0%{transform:rotate(0)}
-100%{transform:rotate(360deg)}
+width:330px;
 }
 
 .btn{
 display:block;
-margin-top:12px;
+margin-top:15px;
 padding:12px;
 border-radius:8px;
 text-decoration:none;
 color:white;
 font-weight:bold;
-}
-
-.shopee{
-background:#ff5722;
-}
-
-.telegram{
 background:#0088cc;
-}
-
-#popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-}
-
-.popup-box{
-background:white;
-color:black;
-width:300px;
-margin:200px auto;
-padding:25px;
-border-radius:12px;
 }
 
 </style>
 
 <script>
 
-let shopeeLink="https://shopee.vn/link-cua-ban"
+let shopee="https://shopee.vn/link-cua-ban"
 
-function openShopee(){
+function checkRedirect(e){
 
-window.open(shopeeLink,"_blank")
+let first=localStorage.getItem("first")
 
-let click=localStorage.getItem("clickCount")
+if(!first){
 
-if(!click){click=0}
+localStorage.setItem("first","done")
 
-click++
+window.location.href=shopee
 
-localStorage.setItem("clickCount",click)
-
-}
-
-window.onload=function(){
-
-if(localStorage.getItem("visited")=="yes"){
-
-document.getElementById("popup").style.display="block"
-
-openShopee()
-
-}else{
-
-localStorage.setItem("visited","yes")
-
-setTimeout(openShopee,1000)
+e.preventDefault()
 
 }
 
 }
+
+document.addEventListener("click",checkRedirect)
 
 </script>
 
@@ -126,40 +69,21 @@ setTimeout(openShopee,1000)
 
 <div class="box">
 
-<h2>Đang mở Shopee...</h2>
+<h2>Nhận deal Telegram</h2>
 
-<div class="loader"></div>
+<p>Chọn nhóm bên dưới</p>
 
-<p>Chờ 1 giây để nhận deal</p>
-
-<a class="btn shopee" href="https://shopee.vn/link-cua-ban">
-Mở Shopee ngay
-</a>
-
-</div>
-
-
-<div id="popup">
-
-<div class="popup-box">
-
-<h3>Nhận mã giảm giá</h3>
-
-<p>Tham gia Telegram để nhận deal mới</p>
-
-<a class="btn telegram" href="https://t.me/linktelegram1">
+<a class="btn" href="https://t.me/link1">
 Telegram nhóm 1
 </a>
 
-<a class="btn telegram" href="https://t.me/linktelegram2">
+<a class="btn" href="https://t.me/link2">
 Telegram nhóm 2
 </a>
 
-<a class="btn telegram" href="https://t.me/linktelegram3">
+<a class="btn" href="https://t.me/link3">
 Telegram nhóm 3
 </a>
-
-</div>
 
 </div>
 
