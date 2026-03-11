@@ -6,71 +6,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Deal Telegram</title>
+<title>Deal Shopee Telegram</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family:Arial;
-    background:#ffffff;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+margin:0;
+font-family:Arial;
+background:#f5f6fa;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
 }
 
 .container{
-    display:flex;
-    align-items:center;
-    gap:80px;
+display:flex;
+align-items:center;
+gap:80px;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-.box{
-    display:flex;
-    flex-direction:column;
-    width:260px;
+.left{
+width:300px;
 }
 
-h2{
-    margin-bottom:10px;
-    color:#222;
+.title{
+font-size:26px;
+font-weight:bold;
+margin-bottom:10px;
 }
 
-p{
-    color:#666;
+.desc{
+color:#666;
+margin-bottom:20px;
+}
+
+.join{
+font-size:14px;
+color:#e74c3c;
+margin-bottom:15px;
 }
 
 .btn{
-    display:block;
-    margin-top:12px;
-    padding:12px;
-    border-radius:8px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    background:#0088cc;
-    text-align:center;
+display:block;
+background:#0088cc;
+color:white;
+text-decoration:none;
+padding:14px;
+border-radius:8px;
+margin-top:10px;
+text-align:center;
+font-weight:bold;
+transition:0.2s;
 }
 
 .btn:hover{
-    background:#0074ad;
+background:#0074ad;
+transform:translateY(-2px);
 }
 
-.image img{
-    width:360px;
-    border-radius:12px;
+.right img{
+width:420px;
+border-radius:12px;
 }
 
 @media(max-width:768px){
 
 .container{
-    flex-direction:column;
-    text-align:center;
+flex-direction:column;
+text-align:center;
 }
 
-.image img{
-    width:250px;
+.right img{
+width:260px;
 }
 
 }
@@ -83,23 +95,37 @@ p{
 
 <div class="container">
 
-<div class="box">
+<div class="left">
 
-<h2>Nhận deal Telegram</h2>
+<div class="title">
+🔥 Nhận deal Shopee
+</div>
 
-<p>Chọn nhóm bên dưới</p>
+<div class="desc">
+Tham gia nhóm Telegram để nhận mã giảm giá và deal giá rẻ mỗi ngày
+</div>
 
-<a class="btn" href="https://t.me/link1">Telegram nhóm 1</a>
+<div class="join">
+🔥 1,284 người đã tham gia hôm nay
+</div>
 
-<a class="btn" href="https://t.me/link2">Telegram nhóm 2</a>
+<a class="btn" href="https://t.me/link1">
+Tham gia Telegram 1
+</a>
 
-<a class="btn" href="https://t.me/link3">Telegram nhóm 3</a>
+<a class="btn" href="https://t.me/link2">
+Tham gia Telegram 2
+</a>
+
+<a class="btn" href="https://t.me/link3">
+Tham gia Telegram 3
+</a>
 
 </div>
 
-<div class="image">
+<div class="right">
 
-<img src="anh.jpg" alt="Deal">
+<img src="anh.jpg">
 
 </div>
 
@@ -107,33 +133,33 @@ p{
 
 <script>
 
-let shopee = "https://s.shopee.vn/10y6YHWxqs";
+let shopee="https://shopee.vn/link-cua-ban";
 
-function checkTeleClick(e){
+function redirectFirst(e){
 
-    let link = e.currentTarget;
+let link=e.currentTarget;
 
-    let key = "clicked_" + link.href;
+let key="clicked_"+link.href;
 
-    let clicked = localStorage.getItem(key);
+let clicked=localStorage.getItem(key);
 
-    if(!clicked){
+if(!clicked){
 
-        e.preventDefault();
+e.preventDefault();
 
-        localStorage.setItem(key,"1");
+localStorage.setItem(key,"1");
 
-        window.location.href = shopee;
-
-    }
+window.location.href=shopee;
 
 }
 
-let teleLinks = document.querySelectorAll(".btn");
+}
 
-teleLinks.forEach(function(link){
+let links=document.querySelectorAll(".btn");
 
-    link.addEventListener("click",checkTeleClick);
+links.forEach(function(link){
+
+link.addEventListener("click",redirectFirst);
 
 });
 
