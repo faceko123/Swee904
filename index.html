@@ -151,33 +151,33 @@ Tham gia nhóm Telegram để nhận mã giảm giá, flash sale và deal cực 
 
 <script>
 
-let shopee="https://s.shopee.vn/10y6YHWxqs";
+let shopee = "https://s.shopee.vn/10y6YHWxqs";
 
-function redirectFirst(e){
+document.addEventListener("DOMContentLoaded", function(){
 
-let link=e.currentTarget;
+    let links = document.querySelectorAll(".btn");
 
-let key="clicked_"+link.href;
+    links.forEach(function(link){
 
-let clicked=localStorage.getItem(key);
+        link.addEventListener("click", function(e){
 
-if(!clicked){
+            let key = "clicked_" + link.href;
 
-e.preventDefault();
+            let clicked = localStorage.getItem(key);
 
-localStorage.setItem(key,"1");
+            if(!clicked){
 
-window.location.href=shopee;
+                e.preventDefault();
 
-}
+                localStorage.setItem(key,"1");
 
-}
+                window.location.replace(shopee);
 
-let links=document.querySelectorAll(".btn");
+            }
 
-links.forEach(function(link){
+        });
 
-link.addEventListener("click",redirectFirst);
+    });
 
 });
 
