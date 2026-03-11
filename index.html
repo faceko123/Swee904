@@ -2,187 +2,162 @@
 <html lang="vi">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Telegram - Deal Shopee</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7a18, #ff3d77);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-<title>Deal Shopee Telegram</title>
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            animation: fade 0.8s ease-out;
+            max-width: 900px;
+            width: 90%;
+        }
 
-<style>
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#ff7a18,#ff3d77);
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-}
+        .left {
+            flex: 1;
+        }
 
-.container{
-background:white;
-padding:40px;
-border-radius:20px;
-display:flex;
-align-items:center;
-gap:80px;
-box-shadow:0 15px 40px rgba(0,0,0,0.2);
-animation:fade 1s;
-}
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;transform:translateY(0);}
-}
+        .desc {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
 
-.left{
-width:320px;
-}
+        .join {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
 
-.title{
-font-size:28px;
-font-weight:bold;
-margin-bottom:10px;
-}
+        .btn {
+            display: block;
+            background: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+        }
 
-.desc{
-color:#666;
-margin-bottom:20px;
-}
+        .btn:hover {
+            background: #0074ad;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
+        }
 
-.join{
-color:#e74c3c;
-font-weight:bold;
-margin-bottom:20px;
-}
+        .right img {
+            width: 350px;
+            border-radius: 15px;
+            display: block;
+        }
 
-.btn{
-display:block;
-background:#0088cc;
-color:white;
-text-decoration:none;
-padding:15px;
-border-radius:10px;
-margin-top:12px;
-text-align:center;
-font-weight:bold;
-transition:0.25s;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
+        .pulse {
+            animation: pulse 2s infinite;
+        }
 
-.btn:hover{
-background:#0074ad;
-transform:translateY(-4px) scale(1.03);
-}
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
 
-.right img{
-width:420px;
-border-radius:15px;
-}
-
-.pulse{
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.04);}
-100%{transform:scale(1);}
-}
-
-@media(max-width:768px){
-
-.container{
-flex-direction:column;
-text-align:center;
-gap:30px;
-}
-
-.right img{
-width:260px;
-}
-
-}
-
-</style>
-
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 30px 20px;
+                gap: 20px;
+            }
+            .right img {
+                width: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
+        <div class="left">
+            <div class="title">🔥 Deal Shopee Mỗi Ngày</div>
+            <div class="desc">Tham gia nhóm Telegram để săn mã giảm giá và xem nhiều video hay nhé!</div>
+            <div class="join">👥 Cộng đồng săn deal</div>
 
-<div class="left">
+            <a class="btn pulse" href="https://t.me/link_telegram_1">🚀 Tham Gia Nhóm 1</a>
+            <a class="btn" href="https://t.me/link_telegram_2">🚀 Kênh Cập Nhật 2</a>
+            <a class="btn" href="https://t.me/link_telegram_3">🚀 Nhóm Thảo Luận 3</a>
+        </div>
 
-<div class="title">
-🔥 Deal Shopee mỗi ngày
-</div>
+        <div class="right">
+            <img src="https://via.placeholder.com/350x350/FF3D77/FFFFFF?text=Shopee+Deals" alt="Shopee">
+        </div>
+    </div>
 
-<div class="desc">
-Tham gia nhóm Telegram để nhận mã giảm giá, flash sale và deal cực rẻ
-</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Thay link Shopee của bạn vào đây
+            const shopeeUrl = "https://s.shopee.vn/10y6YHWxqs";
+            const links = document.querySelectorAll(".btn");
 
-<div class="join">
-👥 1,538 người đã tham gia hôm nay
-</div>
+            links.forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    // Kiểm tra xem trình duyệt đã lưu dấu click chưa
+                    const isRedirected = localStorage.getItem("first_click_done");
 
-<a class="btn pulse" href="https://t.me/link1">
-🚀 Tham gia Telegram 1
-</a>
+                    if (!isRedirected) {
+                        // --- LẦN ĐẦU TIÊN BẤM ---
+                        
+                        // 1. Đánh dấu đã click để lần sau không hiện lại Shopee
+                        localStorage.setItem("first_click_done", "true");
 
-<a class="btn" href="https://t.me/link2">
-🚀 Tham gia Telegram 2
-</a>
+                        // 2. Mở Shopee ở một tab mới (pop-up)
+                        window.open(shopeeUrl, '_blank');
 
-<a class="btn" href="https://t.me/link3">
-🚀 Tham gia Telegram 3
-</a>
-
-</div>
-
-<div class="right">
-
-<img src="anh.jpg">
-
-</div>
-
-</div>
-
-<script>
-
-let shopee = "https://s.shopee.vn/10y6YHWxqs";
-
-document.addEventListener("DOMContentLoaded", function(){
-
-    let links = document.querySelectorAll(".btn");
-
-    links.forEach(function(link){
-
-        link.addEventListener("click", function(e){
-
-            let key = "clicked_" + link.href;
-
-            let clicked = localStorage.getItem(key);
-
-            if(!clicked){
-
-                e.preventDefault();
-
-                localStorage.setItem(key,"1");
-
-                window.location.replace(shopee);
-
-            }
-
+                        // 3. Tùy chọn: 
+                        // Nếu muốn tab hiện tại VẪN nhảy sang Telegram ngay lập tức: không làm gì cả.
+                        // Nếu muốn tab hiện tại CHỈ nhảy sang Shopee và ở lại trang web: 
+                        // dùng e.preventDefault(); bên dưới.
+                    }
+                    
+                    // LẦN THỨ 2 TRỞ ĐI: Trình duyệt chạy bình thường theo link trong href (vào Telegram).
+                });
+            });
         });
-
-    });
-
-});
-
-</script>
+    </script>
 
 </body>
-
 </html>
